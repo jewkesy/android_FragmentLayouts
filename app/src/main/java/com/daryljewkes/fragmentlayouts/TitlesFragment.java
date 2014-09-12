@@ -35,7 +35,7 @@ public class TitlesFragment extends ListFragment {
 
             DetailsFragment details = (DetailsFragment) getFragmentManager().findFragmentById(R.id.details);
 
-            if (details == null || details.getShowIndex() != index) {
+            if (details == null || details.getShownIndex() != index) {
                 details = DetailsFragment.newInstance(index);
 
                 FragmentTransaction ft = getFragmentManager().beginTransaction();
@@ -57,7 +57,7 @@ public class TitlesFragment extends ListFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        ArrayAdapter<String> connectArrayToListView = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_activated_1), SuperHeroInfo.NAMES);
+        ArrayAdapter<String> connectArrayToListView = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_activated_1, SuperHeroInfo.NAMES);
 
         setListAdapter(connectArrayToListView);
 
