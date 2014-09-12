@@ -43,13 +43,14 @@ public class TitlesFragment extends ListFragment {
                 ft.replace(R.id.details, details);
                 ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 ft.commit();
-            } else {
-                Intent intent = new Intent();
-                intent.setClass(getActivity(), DetailsActivity.class);
-                intent.putExtra("index", index);
 
-                startActivity(intent);
             }
+        } else {
+            Intent intent = new Intent();
+            intent.setClass(getActivity(), DetailsActivity.class);
+            intent.putExtra("index", index);
+
+            startActivity(intent);
         }
     }
 
